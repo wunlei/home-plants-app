@@ -1,3 +1,16 @@
+:root {
+  --color-gray-100: #e6e6e6;
+  --color-gray-200: #e4e4e7;
+  --color-green-100: #eceee8;
+  --color-green-200: #c7d3b6;
+  --color-green-300: #adc587;
+  --color-green-400: #535f41;
+  --color-green-500: #4e5d4c;
+  --color-red: #821010;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
 *,
 ::before,
 ::after {
@@ -6,4 +19,21 @@
 
 html {
   box-sizing: border-box;
+}
+
+body {
+  padding: 15px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-green-100);
+  font-optical-sizing: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }
