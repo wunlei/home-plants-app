@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { useAppSelector } from "@/state/hooks";
 import { selectPlantById } from "@/state/plants/plants.selectors";
 import { CardProps } from "@/components/Card/Card.types";
+import Modal from "@/components/commons/Modal/Modal";
 import Button from "@/components/commons/Button/Button";
 import ViewIcon from "@/assets/view.svg";
 import s from "./Card.module.scss";
 
 function Card({ id }: CardProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const plant = useAppSelector((state) => selectPlantById(state, id));
 
   if (!plant) {
@@ -13,6 +17,14 @@ function Card({ id }: CardProps) {
   }
 
   const { name, potPlacement } = plant;
+
+  function handleModalClose() {
+    setIsModalOpen(false);
+  }
+
+  function handleModalOpen() {
+    setIsModalOpen(true);
+  }
 
   return (
     <div className={s.card}>
@@ -22,8 +34,13 @@ function Card({ id }: CardProps) {
         <p>{potPlacement}</p>
       </div>
       <div className={s.footer}>
-        <Button icon={<ViewIcon />}>View</Button>
+        <Button icon={<ViewIcon />} onClick={handleModalOpen}>
+          View
+        </Button>
       </div>
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={handleModalClose}></Modal>
+      )}
     </div>
   );
 }

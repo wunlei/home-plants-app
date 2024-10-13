@@ -7,10 +7,7 @@ function MainPage() {
   return (
     <main>
       <h1 className={s.title}>Home plants</h1>
-      <Button
-        icon={<AddIcon />}
-        classes={[s.btn]}
-      >
+      <Button icon={<AddIcon />} classes={[s.btn]}>
         Add plant
       </Button>
 
