@@ -1,0 +1,29 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: calc(1rem + 5px);
+}
+
+.inputContainerError {
+  padding-bottom: unset;
+
+  & input,
+  & input:focus {
+    border-color: var(--color-red);
+  }
+}
+
+.label {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.labelRequired {
+  color: var(--color-red);
+}
+
+.error {
+  bottom: 0;
+  font-size: 0.9rem;
+  color: var(--color-red);
+}

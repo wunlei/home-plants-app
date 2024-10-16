@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import { ModalProps } from "@/components/commons/Modal/Modal.types";
+import { ModalProps } from "@/components/Modal/Modal.types";
 import CloseIcon from "@/assets/close.svg";
 import s from "./Modal.module.scss";
 
