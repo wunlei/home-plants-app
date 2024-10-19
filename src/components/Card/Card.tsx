@@ -5,6 +5,7 @@ import { CardProps } from "@/components/Card/Card.types";
 import Modal from "@/components/commons/Modal/Modal";
 import Button from "@/components/commons/Button/Button";
 import ViewIcon from "@/assets/view.svg";
+import ViewPlant from "@/components/ViewPlant/ViewPlant";
 import s from "./Card.module.scss";
 
 function Card({ id }: CardProps) {
@@ -39,7 +40,9 @@ function Card({ id }: CardProps) {
         </Button>
       </div>
       {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={handleModalClose}></Modal>
+        <Modal isOpen={isModalOpen} onClose={handleModalClose}>
+          <ViewPlant plant={plant} />
+        </Modal>
       )}
     </div>
   );
