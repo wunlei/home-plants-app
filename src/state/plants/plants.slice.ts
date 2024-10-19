@@ -1,6 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import plantsReducers from "@/state/plants/plants.reducers";
-import { PlantsState } from "@/state/plants/plants.types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Plant, PlantsState } from "@/state/plants/plants.types";
 import { plantItemMock } from "@/constants";
 
 export const initialPlantsState: PlantsState = {
@@ -10,7 +9,19 @@ export const initialPlantsState: PlantsState = {
 export const plantsSlice = createSlice({
   name: "plants",
   initialState: initialPlantsState,
-  reducers: plantsReducers,
+  reducers: {
+    addPlant(state, action: PayloadAction<Plant>) {
+      state.plants.push(action.payload);
+    },
+    deletePlantById(state, action: PayloadAction<string>) {
+      state.plants = state.plants.filter(
+        (plant) => plant.id !== action.payload,
+      );
+    },
+    updatePlantsArray(state, action: PayloadAction<Plant[]>) {
+      state.plants = action.payload;
+    },
+  },
 });
 
 export const { addPlant, deletePlantById, updatePlantsArray } =
