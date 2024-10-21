@@ -1,12 +1,13 @@
 import { Middleware } from "@reduxjs/toolkit";
-import { localStorageKey } from "@/constants";
+import { localStorageKey } from "@/constants/store";
 
 export const localStorageMiddleware: Middleware =
   (storeAPI) => (next) => (action) => {
     const result = next(action);
 
     const state = storeAPI.getState();
-    const stateString = JSON.stringify(state);
+    const plantsArray = state.plants.plants;
+    const stateString = JSON.stringify(plantsArray);
     localStorage.setItem(localStorageKey, stateString);
 
     return result;

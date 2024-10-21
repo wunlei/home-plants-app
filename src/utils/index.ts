@@ -1,6 +1,6 @@
-import { localStorageKey } from "@/constants";
-import { Plant } from "@/state/plants/plants.types";
-import { RootState } from "@/state/store.types";
+import { localStorageKey } from "@/constants/store";
+import { initialPlantsState } from "@/state/plants/plants.slice";
+import { PlantProps } from "@/state/plants/plants.types";
 
 export function getStateFromLS() {
   const lsItem = localStorage.getItem(localStorageKey);
@@ -9,13 +9,22 @@ export function getStateFromLS() {
   }
 
   try {
-    return JSON.parse(lsItem) as RootState;
+    const plantsArray = JSON.parse(lsItem);
+
+    const state = {
+      plants: {
+        ...initialPlantsState,
+        plants: plantsArray,
+      },
+    };
+
+    return state;
   } catch (e) {
     console.error(e);
   }
 }
 
-export function getPlantDetails(plant: Plant) {
+export function getPlantDetails(plant: PlantProps) {
   const { growthStage, repotDate, potPlacement, lightRequirement } = plant;
   return [
     { label: "Pot placement", value: potPlacement },
