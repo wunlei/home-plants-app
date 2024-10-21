@@ -1,0 +1,12 @@
+.textarea {
+  min-height: 5rem;
+  padding: 10px;
+  border: solid 2px var(--color-gray-200);
+  border-radius: 5px;
+  resize: vertical;
+
+  &:focus {
+    border-color: var(--color-green-500);
+    outline: none;
+  }
+}
