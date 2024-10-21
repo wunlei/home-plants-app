@@ -1,8 +1,12 @@
 export interface PlantsState {
-  plants: Plant[];
+  plants: Plants;
 }
 
-export type Plant = {
+export type Plants = {
+  [id: string]: PlantProps;
+};
+
+export type PlantProps = {
   id: string;
   name: string;
   potPlacement: string;

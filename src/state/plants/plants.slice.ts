@@ -1,24 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Plant, PlantsState } from "@/state/plants/plants.types";
-import { plantItemMock } from "@/constants";
+import { Plants, PlantProps, PlantsState } from "@/state/plants/plants.types";
+import { plantItemMock } from "@/constants/store";
 
 export const initialPlantsState: PlantsState = {
-  plants: [plantItemMock],
+  plants: { "1": plantItemMock },
 };
 
 export const plantsSlice = createSlice({
   name: "plants",
   initialState: initialPlantsState,
   reducers: {
-    addPlant(state, action: PayloadAction<Plant>) {
-      state.plants.push(action.payload);
+    addPlant(state, action: PayloadAction<PlantProps>) {
+      state.plants[action.payload.id] = action.payload;
     },
     deletePlantById(state, action: PayloadAction<string>) {
-      state.plants = state.plants.filter(
-        (plant) => plant.id !== action.payload,
-      );
+      delete state.plants[action.payload];
     },
-    updatePlantsArray(state, action: PayloadAction<Plant[]>) {
+    updatePlantsArray(state, action: PayloadAction<Plants>) {
       state.plants = action.payload;
     },
   },

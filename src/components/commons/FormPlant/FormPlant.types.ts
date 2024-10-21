@@ -1,7 +1,7 @@
 import {
   LightRequirements,
   GrowthStages,
-  Plant,
+  PlantProps,
 } from "@/state/plants/plants.types";
 
 export interface FormPlantValues {
@@ -14,7 +14,7 @@ export interface FormPlantValues {
 }
 
 export interface FormPlantProps {
-  plant?: Plant;
+  plant?: PlantProps;
   formId: string;
   handleDataSubmit: (data: FormPlantValues) => void;
 }

@@ -1,10 +1,10 @@
 import { useAppSelector } from "@/state/hooks";
-import { selectPlants } from "@/state/plants/plants.selectors";
+import { selectPlantsValues } from "@/state/plants/plants.selectors";
 import Card from "@/components/Card/Card";
 import s from "./CardsList.module.scss";
 
 function CardsList() {
-  const plants = useAppSelector(selectPlants);
+  const plants = useAppSelector(selectPlantsValues);
 
   return (
     <div className={s.container}>

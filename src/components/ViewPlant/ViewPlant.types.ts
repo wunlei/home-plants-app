@@ -1,6 +1,6 @@
-import { Plant } from "@/state/plants/plants.types";
+import { PlantProps } from "@/state/plants/plants.types";
 
 export interface PlantViewProps {
-  plant: Plant;
+  plant: PlantProps;
   onEdit?: () => void;
 }
