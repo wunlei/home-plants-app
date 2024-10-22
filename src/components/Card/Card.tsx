@@ -35,15 +35,13 @@ function Card({ id }: CardProps) {
         <p>{potPlacement}</p>
       </div>
       <div className={s.footer}>
-        <Button icon={<ViewIcon />} onClick={handleModalOpen}>
+        <Button icon={<ViewIcon />} onClick={() => handleModalOpen()}>
           View
         </Button>
       </div>
-      {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={handleModalClose}>
-          <ViewPlant plant={plant} />
-        </Modal>
-      )}
+      <Modal isOpen={isModalOpen} onClose={handleModalClose}>
+        <ViewPlant plant={plant} />
+      </Modal>
     </div>
   );
 }
