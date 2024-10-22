@@ -1,6 +1,10 @@
 import { useForm } from "react-hook-form";
 import { formatDate } from "@/utils";
-import { GROWTH_STAGES, LIGHT_REQUIREMENTS } from "@/constants";
+import {
+  GROWTH_STAGES,
+  LIGHT_REQUIREMENTS,
+  validationScheme,
+} from "@/constants/form";
 import {
   FormPlantProps,
   FormPlantValues,
@@ -25,13 +29,7 @@ function FormPlant({ plant, formId, handleDataSubmit }: FormPlantProps) {
         register={register}
         error={errors.name}
         required
-        options={{
-          required: { value: true, message: "This field is required" },
-          minLength: {
-            value: 3,
-            message: "Name must be at least 3 characters long",
-          },
-        }}
+        options={validationScheme.name}
       />
 
       <Input
@@ -41,13 +39,7 @@ function FormPlant({ plant, formId, handleDataSubmit }: FormPlantProps) {
         register={register}
         error={errors.potPlacement}
         required
-        options={{
-          required: { value: true, message: "This field is required" },
-          minLength: {
-            value: 3,
-            message: "Name must be at least 3 characters long",
-          },
-        }}
+        options={validationScheme.potPlacement}
       />
 
       <Select
