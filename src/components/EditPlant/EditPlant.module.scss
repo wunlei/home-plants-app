@@ -1,0 +1,36 @@
+@use "@/styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  min-width: 400px;
+  padding: 20px;
+
+  @media (max-width: variables.$breakpoint-small) {
+    min-width: initial;
+  }
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnWrapper {
+  display: flex;
+  column-gap: 10px;
+}
+
+.btnDelete {
+  background-color: var(--color-red);
+
+  & svg {
+    color: var(--color-white);
+  }
+
+  &:hover {
+    background-color: var(--color-red);
+    opacity: 0.6;
+  }
+}
