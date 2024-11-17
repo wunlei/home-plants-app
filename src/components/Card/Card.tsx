@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { useAppSelector } from "@/state/hooks";
 import { selectPlantById } from "@/state/plants/plants.selectors";
 import { CardProps } from "@/components/Card/Card.types";
@@ -63,4 +63,4 @@ function Card({ id }: CardProps) {
   );
 }
 
-export default Card;
+export default memo(Card);

@@ -5,6 +5,10 @@ const selectSlice = (state: RootState) => state.plants;
 
 export const selectPlants = (state: RootState) => selectSlice(state).plants;
 
+export const selectPlantsIds = createSelector([selectPlants], (plants) =>
+  Object.keys(plants),
+);
+
 export const selectPlantsValues = createSelector([selectPlants], (plants) =>
   Object.values(plants),
 );
