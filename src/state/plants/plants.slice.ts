@@ -16,13 +16,16 @@ export const plantsSlice = createSlice({
     deletePlantById(state, action: PayloadAction<string>) {
       delete state.plants[action.payload];
     },
+    updatePlantById(state, action: PayloadAction<PlantProps>) {
+      state.plants[action.payload.id] = action.payload;
+    },
     updatePlantsArray(state, action: PayloadAction<Plants>) {
       state.plants = action.payload;
     },
   },
 });
 
-export const { addPlant, deletePlantById, updatePlantsArray } =
+export const { addPlant, deletePlantById, updatePlantById, updatePlantsArray } =
   plantsSlice.actions;
 
 export default plantsSlice.reducer;

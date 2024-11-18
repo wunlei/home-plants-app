@@ -1,15 +1,15 @@
 import { useAppSelector } from "@/state/hooks";
-import { selectPlantsValues } from "@/state/plants/plants.selectors";
+import { selectPlantsIds } from "@/state/plants/plants.selectors";
 import Card from "@/components/Card/Card";
 import s from "./CardsList.module.scss";
 
 function CardsList() {
-  const plants = useAppSelector(selectPlantsValues);
+  const plantIds = useAppSelector(selectPlantsIds);
 
   return (
     <div className={s.container}>
-      {plants.map((plant) => (
-        <Card key={plant.id} id={plant.id} />
+      {plantIds.map((id) => (
+        <Card key={id} id={id} />
       ))}
     </div>
   );
