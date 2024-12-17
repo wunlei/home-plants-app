@@ -1,4 +1,4 @@
-@use "@/styles/variables";
+@use "@/styles/mixins";
 
 .container {
   display: flex;
@@ -7,7 +7,7 @@
   width: 400px;
   padding: 20px;
 
-  @media (max-width: variables.$breakpoint-small) {
+  @include mixins.media("sm") {
     width: unset;
   }
 }
@@ -25,7 +25,7 @@
   row-gap: 10px;
   column-gap: 2rem;
 
-  @media (max-width: variables.$breakpoint-small) {
+  @include mixins.media("sm") {
     grid-template-columns: max-content;
   }
 }
