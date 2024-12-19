@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  padding: 5px;
+  border: 2px solid var(--color-green-400);
+  border-radius: 10rem;
+  background-color: white;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--color-green-400);
+}
+
+.iconClose {
+  cursor: pointer;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+@supports selector(:has(.input:focus)) {
+  .container {
+    max-width: 150px;
+    transition: max-width 0.5s;
+  }
+
+  .container:has(.input:focus),
+  .hasValue {
+    max-width: 400px;
+  }
+}
