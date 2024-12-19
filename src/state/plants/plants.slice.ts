@@ -4,6 +4,7 @@ import { plantItemMock } from "@/constants/store";
 
 export const initialPlantsState: PlantsState = {
   plants: { "1": plantItemMock },
+  searchTerm: "",
 };
 
 export const plantsSlice = createSlice({
@@ -22,10 +23,18 @@ export const plantsSlice = createSlice({
     updatePlantsArray(state, action: PayloadAction<Plants>) {
       state.plants = action.payload;
     },
+    updateSearchTerm(state, action: PayloadAction<string>) {
+      state.searchTerm = action.payload;
+    },
   },
 });
 
-export const { addPlant, deletePlantById, updatePlantById, updatePlantsArray } =
-  plantsSlice.actions;
+export const {
+  addPlant,
+  deletePlantById,
+  updatePlantById,
+  updatePlantsArray,
+  updateSearchTerm,
+} = plantsSlice.actions;
 
 export default plantsSlice.reducer;

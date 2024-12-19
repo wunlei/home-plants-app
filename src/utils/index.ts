@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { localStorageKey } from "@/constants/store";
 import { initialPlantsState } from "@/state/plants/plants.slice";
 import { PlantProps } from "@/state/plants/plants.types";
@@ -42,4 +43,22 @@ export function formatDate(d: string) {
   const day = dateObj.getDate().toString().padStart(2, "0");
 
   return `${year}-${month}-${day}`;
+}
+
+const DELAY = 500;
+
+export function useDebounceValue<T>(value: T, delay = DELAY) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
 }

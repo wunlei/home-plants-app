@@ -1,5 +1,6 @@
 export interface PlantsState {
   plants: Plants;
+  searchTerm: string;
 }
 
 export type Plants = {
