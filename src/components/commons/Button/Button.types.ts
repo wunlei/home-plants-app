@@ -4,5 +4,6 @@ export interface ButtonProps extends React.PropsWithChildren {
   ghost?: boolean;
   formId?: string;
   classes?: string[];
+  disabled?: boolean;
   onClick?: () => void;
 }
