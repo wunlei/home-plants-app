@@ -1,7 +1,9 @@
+@use "@/styles/mixins";
+
 .textarea {
   min-height: 5rem;
   padding: 10px;
-  border: solid 2px var(--color-gray-200);
+  @include mixins.border(var(--color-gray-200));
   border-radius: 5px;
   resize: vertical;
 
