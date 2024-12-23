@@ -1,3 +1,10 @@
+.main {
+  position: relative;
+  min-height: 100%;
+  padding: 15px;
+  background-color: var(--color-green-100);
+}
+
 .title,
 .btn {
   margin-bottom: 1rem;

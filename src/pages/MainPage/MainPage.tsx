@@ -25,7 +25,7 @@ function MainPage() {
   );
 
   return (
-    <main>
+    <main className={s.main}>
       <h1 className={s.title}>Home plants</h1>
       <SearchBar value={searchTerm} onChange={handleSearchTermUpdate} />
       <Button
