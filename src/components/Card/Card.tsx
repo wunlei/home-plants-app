@@ -1,4 +1,5 @@
 import { memo, useState } from "react";
+import { Link } from "react-router-dom";
 import { useAppSelector } from "@/state/hooks";
 import { selectPlantById } from "@/state/plants/plants.selectors";
 import { CardProps } from "@/components/Card/Card.types";
@@ -6,6 +7,7 @@ import Modal from "@/components/commons/Modal/Modal";
 import Button from "@/components/commons/Button/Button";
 import EditIcon from "@/assets/edit.svg";
 import ViewIcon from "@/assets/view.svg";
+import OpenIcon from "@/assets/open.svg";
 import EditPlant from "@/components/EditPlant/EditPlant";
 import ViewPlant from "@/components/ViewPlant/ViewPlant";
 import s from "./Card.module.scss";
@@ -46,6 +48,9 @@ function Card({ id }: CardProps) {
         <Button icon={<ViewIcon />} onClick={() => handleModalOpen(false)}>
           View
         </Button>
+        <Link to={`plant/${id}`} target="_blank">
+          <Button icon={<OpenIcon />} ghost></Button>
+        </Link>
       </div>
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
         {isEditing ? (
