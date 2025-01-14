@@ -29,3 +29,12 @@
     background-color: var(--color-gray-100);
   }
 }
+
+.disabled {
+  color: var(--color-black-100);
+  pointer-events: none;
+
+  & svg {
+    color: var(--color-black-100);
+  }
+}

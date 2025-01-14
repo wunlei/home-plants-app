@@ -13,3 +13,7 @@ $breakpoints: (
     @warn "No such key: `#{$breakpoint}`. Available breakpoints: #{map.keys($breakpoints)}.";
   }
 }
+
+@mixin border($color: transparent) {
+  border: solid 2px $color;
+}

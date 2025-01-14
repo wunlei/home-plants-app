@@ -8,13 +8,14 @@ function Button({
   ghost,
   formId,
   classes,
+  disabled,
   onClick,
   children,
 }: ButtonProps) {
   return (
     <button
       type={type}
-      className={c(s.btn, ghost && s.ghost, classes)}
+      className={c(s.btn, ghost && s.ghost, disabled && s.disabled, classes)}
       form={formId}
       onClick={onClick}
     >
