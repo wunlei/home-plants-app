@@ -14,14 +14,12 @@ function Plant({ plant }: { plant: PlantProps }) {
       <img src="../pic.jpg" alt={name} className={s.img} />
       <h2 className={s.title}>{name}</h2>
       <div className={s.details}>
-        {details.map((detail, i) =>
-          !detail.value ? null : (
-            <Fragment key={i}>
-              <span className={s.detailLabel}>{detail.label}</span>
-              <span className={s.detailValue}>{detail.value}</span>
-            </Fragment>
-          ),
-        )}
+        {details.map((detail, i) => (
+          <Fragment key={i}>
+            <span className={s.detailLabel}>{detail.label}</span>
+            <span className={s.detailValue}>{detail.value}</span>
+          </Fragment>
+        ))}
       </div>
       {notes && (
         <div>
