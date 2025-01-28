@@ -9,7 +9,7 @@ import { FormPlantValues } from "@/components/commons/FormPlant/FormPlant.types"
 export interface TextareaProps {
   label: string;
   name: Path<FormPlantValues>;
-  defaultValue?: string;
+  defaultValue?: string | null;
   placeholder?: string;
   options?: RegisterOptions<FormPlantValues>;
   error?: FieldError;

@@ -20,11 +20,11 @@ function Input({
         id={name}
         type={type ? type : "text"}
         className={s.input}
-        defaultValue={defaultValue}
+        defaultValue={defaultValue || ""}
         placeholder={placeholder}
         {...register(name, {
           ...options,
-          setValueAs: (value) => value.trim(),
+          setValueAs: (value) => (value ? value.trim() : null),
         })}
         max={max}
       />

@@ -11,7 +11,7 @@ export interface InputProps {
   type?: HTMLInputTypeAttribute;
   label: string;
   name: Path<FormPlantValues>;
-  defaultValue?: string;
+  defaultValue?: string | null;
   placeholder?: string;
   error?: FieldError;
   required?: boolean;

@@ -16,11 +16,11 @@ function Textarea({
       <textarea
         id={name}
         className={s.textarea}
-        defaultValue={defaultValue}
+        defaultValue={defaultValue || ""}
         placeholder={placeholder}
         {...register(name, {
           ...options,
-          setValueAs: (value) => value.trim(),
+          setValueAs: (value) => (value ? value.trim() : null),
         })}
       ></textarea>
     </InputWrapper>
