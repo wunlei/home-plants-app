@@ -1,4 +1,4 @@
-import InputWrapper from "@/components/commons/InputWrapper/InputWrapper";
+import InputWrapper from "@/components/commons/InputWrapper";
 import { InputProps } from "@/components/commons/Input/Input.types";
 import s from "./Input.module.scss";
 

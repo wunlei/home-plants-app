@@ -1,9 +1,9 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "@/components/App/App";
-import MainPage from "@/pages/MainPage/MainPage";
-import NotFound from "@/pages/NotFound/NotFound";
-import PlantPage from "@/pages/PlantPage/PlantPage";
-import { RouteErrorBoundary } from "@/components/commons/ErrorBoundary/ErrorBoundary";
+import MainPage from "@/pages/MainPage";
+import NotFound from "@/pages/NotFound";
+import PlantPage from "@/pages/PlantPage";
+import { RouteErrorBoundary } from "@/components/commons/ErrorBoundary";
 
 export const router = createBrowserRouter([
   {

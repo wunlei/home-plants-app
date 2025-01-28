@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { useAppSelector } from "@/state/hooks";
 import { selectPlantById } from "@/state/plants/plants.selectors";
 import { CardProps } from "@/components/Card/Card.types";
-import Modal from "@/components/commons/Modal/Modal";
-import Button from "@/components/commons/Button/Button";
+import Modal from "@/components/commons/Modal";
+import Button from "@/components/commons/Button";
 import EditIcon from "@/assets/edit.svg";
 import ViewIcon from "@/assets/view.svg";
 import OpenIcon from "@/assets/open.svg";
-import EditPlant from "@/components/EditPlant/EditPlant";
-import ViewPlant from "@/components/ViewPlant/ViewPlant";
+import EditPlant from "@/components/EditPlant";
+import ViewPlant from "@/components/ViewPlant";
 import s from "./Card.module.scss";
 
 function Card({ id }: CardProps) {

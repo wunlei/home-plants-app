@@ -3,11 +3,11 @@ import { useSearchParams } from "react-router-dom";
 import { useAppDispatch } from "@/state/hooks";
 import { updateSearchTerm } from "@/state/plants/plants.slice";
 import AddIcon from "@/assets/add.svg";
-import Button from "@/components/commons/Button/Button";
-import Modal from "@/components/commons/Modal/Modal";
-import CardsList from "@/components/CardsList/CardsList";
-import AddPlant from "@/components/AddPlant/AddPlant";
-import SearchBar from "@/components/commons/SearchBar/SearchBar";
+import Button from "@/components/commons/Button";
+import Modal from "@/components/commons/Modal";
+import CardsList from "@/components/CardsList";
+import AddPlant from "@/components/AddPlant";
+import SearchBar from "@/components/commons/SearchBar";
 import s from "./MainPage.module.scss";
 
 function MainPage() {

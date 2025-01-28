@@ -1,7 +1,7 @@
 import { PlantViewProps } from "@/components/ViewPlant/ViewPlant.types";
 import EditIcon from "@/assets/edit.svg";
-import Button from "@/components/commons/Button/Button";
-import Plant from "@/components/commons/Plant/Plant";
+import Button from "@/components/commons/Button";
+import Plant from "@/components/commons/Plant";
 import s from "./ViewPlant.module.scss";
 
 function ViewPlant({ plant, onEdit }: PlantViewProps) {

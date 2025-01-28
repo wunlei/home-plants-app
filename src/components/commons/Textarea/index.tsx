@@ -1,5 +1,5 @@
 import { TextareaProps } from "@/components/commons/Textarea/Textarea.types";
-import InputWrapper from "@/components/commons/InputWrapper/InputWrapper";
+import InputWrapper from "@/components/commons/InputWrapper";
 import s from "./Textarea.module.scss";
 
 function Textarea({

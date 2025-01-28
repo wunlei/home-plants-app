@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "@/components/commons/Button/Button";
+import Button from "@/components/commons/Button";
 import s from "./NotFound.module.scss";
 
 function NotFound() {
