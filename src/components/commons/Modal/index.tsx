@@ -1,11 +1,17 @@
 import { useEffect } from "react";
+import { clsx as c } from "clsx";
+
 import { createPortal } from "react-dom";
 import { ModalProps } from "@/components/commons/Modal/Modal.types";
 import CloseIcon from "@/assets/close.svg";
+import Loader from "@/components/commons/Loader";
 import s from "./Modal.module.scss";
 
-function Modal({ isOpen, onClose, children }: ModalProps) {
+function Modal({ isOpen, isLoading, onClose, children }: ModalProps) {
   function handleClose(e: React.MouseEvent) {
+    if (isLoading) {
+      return;
+    }
     if (e.target === e.currentTarget) {
       onClose();
     }
@@ -22,7 +28,8 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
 
   return createPortal(
     <div className={s.overlay} onClick={(e) => handleClose(e)}>
-      <div className={s.container}>
+      {isLoading && <Loader absolute />}
+      <div className={c(s.container, isLoading && s.containerLoading)}>
         <button className={s.btnClose} onClick={onClose}>
           <CloseIcon />
         </button>
