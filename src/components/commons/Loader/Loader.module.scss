@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+}
+
+.loader {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: solid 4px var(--color-gray-300);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  border-top-color: var(--color-black);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
