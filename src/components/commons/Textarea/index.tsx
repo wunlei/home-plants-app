@@ -1,5 +1,5 @@
 import { TextareaProps } from "@/components/commons/Textarea/Textarea.types";
-import InputWrapper from "@/components/commons/InputWrapper/InputWrapper";
+import InputWrapper from "@/components/commons/InputWrapper";
 import s from "./Textarea.module.scss";
 
 function Textarea({
@@ -16,11 +16,11 @@ function Textarea({
       <textarea
         id={name}
         className={s.textarea}
-        defaultValue={defaultValue}
+        defaultValue={defaultValue || ""}
         placeholder={placeholder}
         {...register(name, {
           ...options,
-          setValueAs: (value) => value.trim(),
+          setValueAs: (value) => (value ? value.trim() : null),
         })}
       ></textarea>
     </InputWrapper>

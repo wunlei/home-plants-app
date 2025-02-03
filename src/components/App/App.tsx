@@ -1,7 +1,12 @@
-import MainPage from "@/pages/MainPage/MainPage";
+import { Outlet } from "react-router-dom";
+import ErrorBoundary from "@/components/commons/ErrorBoundary";
 
 function App() {
-  return <MainPage />;
+  return (
+    <ErrorBoundary>
+      <Outlet />
+    </ErrorBoundary>
+  );
 }
 
 export default App;

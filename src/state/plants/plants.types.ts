@@ -11,10 +11,10 @@ export type PlantProps = {
   id: string;
   name: string;
   potPlacement: string;
-  repotDate: string;
-  growthStage: GrowthStages;
-  lightRequirement: LightRequirements;
-  notes: string;
+  repotDate: string | null;
+  growthStage: GrowthStages | null;
+  lightRequirement: LightRequirements | null;
+  notes: string | null;
 };
 
 export type FertilizerTypes =

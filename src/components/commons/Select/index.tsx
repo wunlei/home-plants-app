@@ -1,4 +1,4 @@
-import InputWrapper from "@/components/commons/InputWrapper/InputWrapper";
+import InputWrapper from "@/components/commons/InputWrapper";
 import { SelectProps } from "@/components/commons/Select/Select.types";
 import s from "./Select.module.scss";
 

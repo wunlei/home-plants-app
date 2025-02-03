@@ -2,8 +2,8 @@ import { v4 as uuid } from "uuid";
 import { useAppDispatch } from "@/state/hooks";
 import { addPlant } from "@/state/plants/plants.slice";
 import { PlantAddProps } from "@/components/AddPlant/AddPlant.types";
-import Button from "@/components/commons/Button/Button";
-import FormPlant from "@/components/commons/FormPlant/FormPlant";
+import Button from "@/components/commons/Button";
+import FormPlant from "@/components/commons/FormPlant";
 import { FormPlantValues } from "@/components/commons/FormPlant/FormPlant.types";
 import s from "./AddPlant.module.scss";
 

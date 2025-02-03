@@ -1,4 +1,4 @@
-import InputWrapper from "@/components/commons/InputWrapper/InputWrapper";
+import InputWrapper from "@/components/commons/InputWrapper";
 import { InputProps } from "@/components/commons/Input/Input.types";
 import s from "./Input.module.scss";
 
@@ -20,11 +20,11 @@ function Input({
         id={name}
         type={type ? type : "text"}
         className={s.input}
-        defaultValue={defaultValue}
+        defaultValue={defaultValue || ""}
         placeholder={placeholder}
         {...register(name, {
           ...options,
-          setValueAs: (value) => value.trim(),
+          setValueAs: (value) => (value ? value.trim() : null),
         })}
         max={max}
       />

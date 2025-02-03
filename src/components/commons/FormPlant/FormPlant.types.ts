@@ -1,20 +1,10 @@
-import {
-  LightRequirements,
-  GrowthStages,
-  PlantProps,
-} from "@/state/plants/plants.types";
+import { PlantProps } from "@/state/plants/plants.types";
 
-export interface FormPlantValues {
-  name: string;
-  potPlacement: string;
-  lightRequirement: LightRequirements;
-  growthStage: GrowthStages;
-  repotDate: string;
-  notes: string;
-}
+export type FormPlantValues = Omit<PlantProps, "id">;
 
 export interface FormPlantProps {
   plant?: PlantProps;
   formId: string;
+  disabled?: boolean;
   handleDataSubmit: (data: FormPlantValues) => void;
 }

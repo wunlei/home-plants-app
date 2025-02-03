@@ -1,0 +1,40 @@
+@use "@/styles/mixins";
+
+.img {
+  max-width: 250px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.title,
+.img {
+  align-self: center;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  row-gap: 10px;
+  column-gap: 2rem;
+
+  @include mixins.media("sm") {
+    grid-template-columns: max-content;
+  }
+}
+
+.detailLabel {
+  color: var(--color-green-500);
+}
+
+.detailValue {
+  font-weight: 500;
+}
+
+.notes {
+  margin-bottom: 10px;
+}
+
+.btnContainer {
+  display: flex;
+}

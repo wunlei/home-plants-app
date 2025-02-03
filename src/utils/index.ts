@@ -25,6 +25,11 @@ export function getStateFromLS() {
   }
 }
 
+type plantDetail = {
+  label: string;
+  value: string;
+};
+
 export function getPlantDetails(plant: PlantProps) {
   const { growthStage, repotDate, potPlacement, lightRequirement } = plant;
   return [
@@ -32,7 +37,7 @@ export function getPlantDetails(plant: PlantProps) {
     { label: "Light Requirement", value: lightRequirement },
     { label: "Growth stage", value: growthStage },
     { label: "Repot date", value: repotDate },
-  ];
+  ].filter((item): item is plantDetail => !!item.value);
 }
 
 export function formatDate(d: string) {

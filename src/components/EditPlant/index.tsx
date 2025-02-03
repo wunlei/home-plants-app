@@ -4,8 +4,8 @@ import { FormPlantValues } from "@/components/commons/FormPlant/FormPlant.types"
 import { PlantEditProps } from "@/components/EditPlant/EditPlant.types";
 import { editFormId } from "@/constants/form";
 import DeleteIcon from "@/assets/delete.svg";
-import FormPlant from "@/components/commons/FormPlant/FormPlant";
-import Button from "@/components/commons/Button/Button";
+import FormPlant from "@/components/commons/FormPlant";
+import Button from "@/components/commons/Button";
 import s from "./EditPlant.module.scss";
 
 function EditPlant({ plant, onClose }: PlantEditProps) {

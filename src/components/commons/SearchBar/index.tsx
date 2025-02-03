@@ -6,7 +6,7 @@ import SearchIcon from "@/assets/search.svg?react";
 import CloseIcon from "@/assets/close.svg?react";
 import s from "./SearchBar.module.scss";
 
-function SearchBar({ value, onChange }: SearchBarProps) {
+function SearchBar({ value, disabled, onChange }: SearchBarProps) {
   const [searchValue, setSearchValue] = useState(value);
   const debounceSearchValue = useDebounceValue(searchValue);
 
@@ -29,6 +29,7 @@ function SearchBar({ value, onChange }: SearchBarProps) {
         placeholder="Search..."
         autoFocus={!!searchValue}
         className={c(s.input)}
+        disabled={disabled}
       />
 
       {searchValue && (

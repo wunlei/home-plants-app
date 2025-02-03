@@ -9,9 +9,9 @@ import {
   FormPlantProps,
   FormPlantValues,
 } from "@/components/commons/FormPlant/FormPlant.types";
-import Input from "@/components/commons/Input/Input";
-import Select from "@/components/commons/Select/Select";
-import Textarea from "@/components/commons/Textarea/Textarea";
+import Input from "@/components/commons/Input";
+import Select from "@/components/commons/Select";
+import Textarea from "@/components/commons/Textarea";
 
 function FormPlant({ plant, formId, handleDataSubmit }: FormPlantProps) {
   const {
