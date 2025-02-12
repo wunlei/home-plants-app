@@ -25,6 +25,11 @@
 
 .containerLoading {
   pointer-events: none;
+
+  & .btnClose,
+  & .content {
+    opacity: 0.4;
+  }
 }
 
 .content {

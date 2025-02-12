@@ -1,7 +1,17 @@
 export interface PlantsState {
   plants: Plants;
   searchTerm: string;
+  isLoading: boolean;
+  isError: boolean;
+  isCardLoading: boolean;
+  isCardError: boolean;
+  notification: Notification;
 }
+
+export type Notification = {
+  type: "info" | "error" | "success" | null;
+  text: string;
+};
 
 export type Plants = {
   [id: string]: PlantProps;

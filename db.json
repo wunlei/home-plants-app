@@ -1,0 +1,13 @@
+{
+  "plants": [
+    {
+      "name": "Monstera Deliciosa",
+      "lightRequirement": "Partial Shade",
+      "repotDate": "2023-01-15",
+      "growthStage": "Mature",
+      "potPlacement": "Living room",
+      "notes": "New leaves are growing. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "id": "7df10058-2682-48a5-8d10-705a6e3356ef"
+    }
+  ]
+}

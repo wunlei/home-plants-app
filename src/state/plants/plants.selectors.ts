@@ -4,8 +4,21 @@ import { RootState } from "@/state/store.types";
 const selectSlice = (state: RootState) => state.plants;
 
 export const selectPlants = (state: RootState) => selectSlice(state).plants;
+
 export const selectSearchTerm = (state: RootState) =>
   selectSlice(state).searchTerm;
+
+export const selectIsLoading = (state: RootState) =>
+  selectSlice(state).isLoading;
+export const selectIsError = (state: RootState) => selectSlice(state).isError;
+
+export const selectIsCardLoading = (state: RootState) =>
+  selectSlice(state).isCardLoading;
+export const selectIsCardError = (state: RootState) =>
+  selectSlice(state).isCardError;
+
+export const selectNotification = (state: RootState) =>
+  selectSlice(state).notification;
 
 export const selectPlantsIds = createSelector([selectPlants], (plants) =>
   Object.keys(plants),

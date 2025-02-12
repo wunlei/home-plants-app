@@ -1,7 +1,10 @@
 import { memo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "@/state/hooks";
-import { selectPlantById } from "@/state/plants/plants.selectors";
+import {
+  selectIsCardLoading,
+  selectPlantById,
+} from "@/state/plants/plants.selectors";
 import { CardProps } from "@/components/Card/Card.types";
 import Modal from "@/components/commons/Modal";
 import Button from "@/components/commons/Button";
@@ -10,11 +13,13 @@ import ViewIcon from "@/assets/view.svg";
 import OpenIcon from "@/assets/open.svg";
 import EditPlant from "@/components/EditPlant";
 import ViewPlant from "@/components/ViewPlant";
+import Image from "@/components/commons/Image";
 import s from "./Card.module.scss";
 
 function Card({ id }: CardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  const isLoading = useAppSelector(selectIsCardLoading);
 
   const plant = useAppSelector((state) => selectPlantById(state, id));
 
@@ -36,7 +41,13 @@ function Card({ id }: CardProps) {
 
   return (
     <div className={s.card}>
-      <img className={s.img} src="./pic.jpg" alt="plant" />
+      <Image
+        alt="plant"
+        classes={[s.img]}
+        src="http://localhost:3000/pic.jpg"
+        height={220}
+        width={220}
+      />
       <div className={s.header}>
         <h2 className={s.name}>{name}</h2>
         <p>{potPlacement}</p>
@@ -52,7 +63,11 @@ function Card({ id }: CardProps) {
           <Button icon={<OpenIcon />} ghost></Button>
         </Link>
       </div>
-      <Modal isOpen={isModalOpen} onClose={handleModalClose}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        isLoading={isLoading}
+      >
         {isEditing ? (
           <EditPlant onClose={handleModalClose} plant={plant} />
         ) : (
