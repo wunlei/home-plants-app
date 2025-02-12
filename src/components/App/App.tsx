@@ -11,20 +11,27 @@ function App() {
   const notification = useAppSelector(selectNotification);
 
   useEffect(() => {
-    if (notification.type === "error") {
-      toast.error(notification.text, {
-        onClose: () => {
-          dispatch(resetNotification());
-        },
-      });
-    }
+    const onClose = () => {
+      dispatch(resetNotification());
+    };
+    const { text, type } = notification;
 
-    if (notification.type === "success") {
-      toast.success(notification.text, {
-        onClose: () => {
-          dispatch(resetNotification());
-        },
-      });
+    switch (type) {
+      case "error":
+        toast.error(text, {
+          onClose,
+        });
+        break;
+      case "success":
+        toast.success(text, {
+          onClose,
+        });
+        break;
+      default:
+        if (type) {
+          toast(text, { onClose });
+        }
+        break;
     }
   }, [dispatch, notification]);
 
