@@ -41,20 +41,18 @@ function MainPage() {
 
       <CardsList />
 
-      {isModalOpen && (
-        <Modal
-          isOpen={isModalOpen}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+        }}
+      >
+        <AddPlant
           onClose={() => {
             setIsModalOpen(false);
           }}
-        >
-          <AddPlant
-            onClose={() => {
-              setIsModalOpen(false);
-            }}
-          />
-        </Modal>
-      )}
+        />
+      </Modal>
     </main>
   );
 }
